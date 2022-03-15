@@ -1,0 +1,27 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/@internal/prisma/client"
+  // check output is same app services import
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("CHALLENGE_DATABASE_URL")
+}
+
+model Challenge {
+  id    Int    @id @default(autoincrement())
+  title String @unique
+}
+
+model Timeline {
+  id    Int    @id @default(autoincrement())
+  slug String
+}
+
+  // output   = "../node_modules/@account/prisma/client"
+  // output   = "../node_modules/@challenge/prisma/client"
+  // output   = "../node_modules/@idea/prisma/client"
