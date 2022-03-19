@@ -91,7 +91,7 @@ export class AppController {
     // const decrypt = CryptoJS.AES.decrypt(body.data, 'secret key 123')
     // var originalText = decrypt.toString(CryptoJS.enc.Utf8)
     // return originalText
-
+    
     var bytes = CryptoJS.AES.decrypt(body.data, 'secret key 123');
     var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
     console.log('decryptedData', decryptedData)
