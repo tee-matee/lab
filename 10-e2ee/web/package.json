@@ -3,16 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_ENV=env/.env.local next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "debug": "NODE_OPTIONS='--inspect' NODE_ENV=env/.env.local next dev",
+    "build:uat": "NODE_ENV=env/.env.uat next build",
+    "build:staging": "NODE_ENV=env/.env.staging next build",
+    "build:production": "NODE_ENV=env/.env.production next build"
   },
   "dependencies": {
     "@types/node": "20.3.0",
     "@types/react": "18.2.11",
     "@types/react-dom": "18.2.4",
+    "antd": "^5.6.1",
     "autoprefixer": "10.4.14",
+    "axios": "^1.4.0",
+    "dotenv": "^16.1.4",
+    "dotenv-webpack": "^8.0.1",
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.5",
     "next": "13.4.5",
